@@ -1,0 +1,26 @@
+ECharts，一个使用 JavaScript 实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的矢量图形库 ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。
+
+淘宝镜像  npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+1.npm init -y 生成package.json
+2.cnpm i webpack --save 生成webpack所需文件夹(--save下载到本地下次相同的环境还能用)
+3.创建webpack.config.js文件 配置入口出口等 例
+var path=require('path')  （webpack2.0之后要通过path这种方式获得当前文件的一个绝对路径）
+//模块化管理
+module.exports={
+	//开启监听模式指令输入webpack自动打包
+	watch:true,
+	//入口
+	entry:"./demo1.js",
+	//出口
+	output:{
+	//目录地址
+	path:path.join(__dirname,'static/'),
+	//文件名称
+	filename:'demo1.js'
+	}
+}
+4.命令行webpack打包static文件夹及demo1.js页面里引入的是这个js
+5.npm install echarts --save
+6.引入jquery是cnpm install jquery@1.11.1 --save
+
